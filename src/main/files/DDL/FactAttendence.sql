@@ -1,0 +1,11 @@
+create table if not exists FactAttendence(STUDENT_ID BIGINT NOT NULL,
+                     TIME_ID    VARCHAR(5),
+                     CURDATE    DATE,
+                     COURSE_ID  VARCHAR(9),
+                     STAFF_ID   VARCHAR(9),
+                     ATTENDENCE VARCHAR(5),
+                     ATTENDENCE_START_DATE DATETIME,
+                     ATTENDENCE_END_DATE   DATETIME,
+					 FOREIGN KEY(COURSE_ID) REFERENCES course_details(COURSE_ID),
+					 FOREIGN KEY(STUDENT_ID) REFERENCES STUDENT_REFERENCE(STUDENT_ID),
+					 FOREIGN KEY(STAFF_ID) REFERENCES staff_details(STAFF_ID));

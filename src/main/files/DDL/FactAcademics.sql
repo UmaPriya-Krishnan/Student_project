@@ -1,0 +1,13 @@
+create table if not exists FactAcademics(STUDENT_ID BIGINT NOT NULL,
+                     DEGREE_ID  BIGINT,
+                     EXAM_ID    INT,
+                     MARKS  INT,
+                     COURSE_ID  VARCHAR(9),
+                     GRADE_ID   CHAR(2),
+                     ACADEMICS_START_DATE DATETIME,
+                     ACADEMICS_END_DATE   DATETIME,
+					 FOREIGN KEY (STUDENT_ID) REFERENCES STUDENT_REFERENCE(STUDENT_ID),
+					 FOREIGN KEY(DEGREE_ID) REFERENCES degree(DEGREE_ID),
+					 FOREIGN KEY(COURSE_ID) REFERENCES course_details(COURSE_ID),
+					 FOREIGN KEY(EXAM_ID) REFERENCES exam_details(EXAM_ID),
+					 FOREIGN KEY(GRADE_ID) REFERENCES grade_details(GRADE_ID));
