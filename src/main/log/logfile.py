@@ -9,11 +9,6 @@ def logger():
         logger = logging.getLogger()
         logger.setLevel(logging.DEBUG)
         logger.addHandler(handler)
-        logger.debug('debug message')
-        logger.info('info message')
-        logger.warning('warn message')
-        logger.error('error message')
-        logger.critical('critical message')
         return logging
     except Exception as e:
         return False
